@@ -1,0 +1,22 @@
+:root {
+  /* Claude.ai inspired palette */
+  --color-background: #FAF7F2; /* Warm off-white paper background */
+  --color-surface: #FFFFFF; /* White card surfaces */
+  --color-primary: #1F1F1F; /* Dark text for headings and main content */
+  --color-secondary: #6B6B6B; /* Muted warm gray for secondary text, labels */
+  --color-accent: #C97D60; /* Soft terracotta for accents, active states */
+  --color-border: #E5E5E5; /* Subtle light gray for borders */
+  --color-text-light: #8A8A8A; /* Lighter gray for descriptions */
+  --color-text-dark: #1F1F1F; /* Darkest text */
+  --color-success: #4CAF50; /* Green for success messages */
+  --color-error: #F44336; /* Red for error messages */
+  --color-warning: #FFC107; /* Yellow for warnings */
+  
+  /* General styling variables */
+  --border-radius: 8px;
+  --transition-base: 0.3s ease;
+  --transition-fast: 0.15s ease;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+}

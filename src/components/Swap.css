@@ -1,0 +1,325 @@
+.swap-container {
+  width: 100%;
+  position: relative;
+}
+
+.swap-box {
+  background: transparent;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  border: none;
+  position: relative;
+}
+
+.swap-box::before {
+  display: none;
+}
+
+.swap-input-section {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-label {
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  background: var(--color-surface);
+  border-radius: var(--border-radius);
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.input-group::before {
+  display: none;
+}
+
+.input-group:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.input-group:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.amount-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  outline: none;
+  min-width: 0;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0;
+}
+
+.amount-input::-webkit-outer-spin-button,
+.amount-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.amount-input::placeholder {
+  color: var(--color-text-light);
+}
+
+.amount-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.swap-arrow {
+  width: 44px;
+  height: 44px;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.swap-arrow:hover:not(:disabled) {
+  background-color: rgba(201, 125, 96, 0.05);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.swap-arrow:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.swap-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.quote-button {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-family: 'Inter', sans-serif;
+  margin: 0.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.quote-button:hover:not(:disabled) {
+  background-color: rgba(201, 125, 96, 0.05);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.quote-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.quote-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.swap-button {
+  flex: 1;
+  background: var(--color-accent);
+  color: var(--color-surface);
+  border: 1px solid var(--color-accent);
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-family: 'Inter', sans-serif;
+  margin: 0.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.swap-button:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.swap-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  background: var(--color-surface);
+  color: var(--color-text-light);
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
+.swap-button:hover:not(:disabled) {
+  background: #B86A4F;
+  border-color: #B86A4F;
+  box-shadow: var(--shadow-lg);
+}
+
+.swap-button:hover:disabled {
+  background: var(--color-surface);
+  color: var(--color-text-light);
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  padding: 0.75rem;
+  background: rgba(244, 67, 54, 0.05);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-error);
+  animation: errorShake 0.5s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.swap-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.swap-footer span {
+  flex: 1;
+  text-align: left;
+}
+
+.swap-history-button {
+  width: 36px;
+  height: 36px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  padding: 0;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.swap-history-button:hover {
+  background-color: rgba(201, 125, 96, 0.05);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.swap-history-button:active {
+  transform: none;
+}
+
+.swap-history-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 768px) {
+  .swap-box {
+    padding: 1rem;
+  }
+
+  .swap-input-section {
+    margin-bottom: 0.75rem;
+  }
+
+  .input-group {
+    padding: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .amount-input {
+    font-size: 1.1rem;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .token-selector-button {
+    min-width: 120px;
+    font-size: 0.9rem;
+    padding: 0.625rem 0.875rem;
+  }
+
+  .swap-arrow {
+    width: 40px;
+    height: 40px;
+    margin: 0.5rem auto;
+  }
+
+  .swap-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .quote-button {
+    width: 100%;
+    padding: 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .swap-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .swap-footer span {
+    font-size: 0.8rem;
+  }
+
+  .swap-history-button {
+    width: 44px;
+    height: 44px;
+  }
+}
